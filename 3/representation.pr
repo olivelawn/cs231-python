@@ -1,0 +1,9 @@
+
+ji.py: This program appears to have the correct numbers. The only thing missing is that I don't see that you citing your sources for the information.
+jn.py: This program looks good to me. The math adds upfor your sources 
+z3.py: The math on this program looks correct. Several other programs mentioned how much more voting power one senator had vs anohter (idoho senator has approx 11-12 times the voting power of a florida senator). I also don't see  that you cited your sources of information.
+4r.py: I don't think this program is correct. I see the numerical output in decimal notation. I converted it to a decimal and I see 1,100,000,000%, which doesn't seem right. I suspect your math may have a decimal point in the wrong spot. Several other programs mentioned how much more voting power one senator had vs anohter (idoho senator has approx 11-12 times the voting power of a florida senator).  I don't see that the  program lists any sources on stdout (but I do see you list in your comments).
+w4.py: This program appears to be correct. I don't see that you listed your sources in the output, but I do see it in your comments.
+ds.py: The math and the program look good, but I don't see the sources of your information.
+jq.py: The math on this program looks right, although other programs mentioned how much more voting power one senator had vs anohter (idoho senator has approx 11-12 times the voting power of a florida senator).
+

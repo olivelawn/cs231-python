@@ -1,0 +1,7 @@
+38.py: This program works wonderfully. I didn't think about subtracting uniques from the total number of arguments to determine the number of duplicates(I used a dictionary/counter to determine dups, but your code is cleaner). Well played. Nice.
+s4.py: This program seems to work correctly. The way you wrote your if conditionals confused me a little bit. You *might* (stress might) have been able to make it a little more concise/readable, but again, that is more of a stylistic choice. Regardless, logic works! Nice.
+ry.py: This program works as intended. Looks like you embedded some of your conditionals inside your print statements. I hadn't thought of doing it that way. Nice.
+yk.py: Very concise and working program. Most people used dictionaries/counters, but your program is short and sweet by using sets and some arthitmetic. I didn't think of doing it that way. Nice.
+fs.py: Very concise and works perfectly. I like that you used sets/arithmentic to determine duplicates (I used a dictionary/counter, but I like your code better)
+8p.py: This program mostly works as intended. My only complaint is that it throws an error if you don't provide any arguments to the program.
+7n.py: This program works as intended. Looks like you print the list of arguments. At first I thought it was the list of duplicates. No biggie, just a little confusing at 1st.

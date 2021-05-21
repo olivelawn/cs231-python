@@ -1,0 +1,8 @@
+
+iu.py: This program does reverse the elements of a list (and I do like your choice of lists), but the program is supposed to take arguments in on the command line. Have a look at this...might help: https://www.tutorialspoint.com/python/python_command_line_arguments.htm
+pq.py: This program mostly works, but I did find a condition that 'causes it to break. Try passing a single argument like in the following example: $ python3 <your prog> singlearg. When I pass a single argument it prints nothing.
+nn.py: Interesting interpretation of the assignment. I see you both reversed the order of the cmd line arguments and then furthermore reversed the characters of each word. I didn't reverse each character in my program, but perhaps I misunderstood.
+ix.py: Assuming you're supposed to print the name of the program itself as part of the output, this works perfect. I didn't think to use the join method to make the output readable (i.e. without the list brackets and quotes). Nice.
+c9.py: This program works well. You looped the output over several lines, which is different than how some other performed the assignment.. I reversed the output and printde all of the arguments on a single line myself.
+xh.py: This program performs as expected. Nice. I also looped the print( line = ' ') portion in my program to make the output clean. I also saw another student do something slick by passing the list to nicely_formatted_list=" ".join(list) and then printing nicelyformatted list to get a similar result. 
+6m.py: This is the shortest program I looked at. Concise! Several other studenet printed the cmd line arguments individually and not as a list.,

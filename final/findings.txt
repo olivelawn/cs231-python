@@ -1,0 +1,68 @@
+
+/*
+It took me a bit to wrap my head around this program (and even still there are some bits i'm a little foggy on). I put this through
+the pdb debugger to make sure I mostly understood it. There was some trial and error and a few aha! moments. I decided that I would describe
+what the code does at a high level, but also comment every line because, well, the devil is in the details. Below you find most of the original
+code with my line by line description enclosed in C-style comments (/* */) -- I know those don't work in python, but I wanted them to stand out. 
+
+At a high level this program prints out the following from urantia:
+
+ 1. the word or digit that appears most often.
+ 2. the word or digit that is the greatest in length.
+ 3. the largest number (even if represented as a string with commas).
+ 4. the word that would be last when list of words sorted in alphabetical order.
+ 5. the word that appears most often, but that is not in file 'english'.
+*/
+
+#
+# 0. tools
+/* Import split object from from regular expression library. */
+from re import split
+/* Import urlopen object from urllibrequest library and refer to object definition as access. */
+from urllib.request import urlopen as access 
+/* Import Counter object from collections library. A counter is similar to a dict, except that it stores a value and number of occurencs of that value. */
+from collections import Counter
+
+
+#
+# 1. resources
+/* Open file "english," read contents, split by newline character, and convert to a set, which will remove duplicates (if any), and store variable terms. */
+terms = set(open('/users/abrick/resources/english').read().split('\n'))
+/* Using the access (urlopen) object, perform a read http request and decode the bytes into a string, and store in variable material. */
+material = access('http://hills.ccsf.edu/~abrick/urantia').read().decode()
+/* Using the split object, split the urantia data stored in "material" by a regular expression, and then count the occurences of resulting split using the Counter object, and finally store in variable "parts."  The "raw notation" regular expression used to split the data can be read as 0 or 1 of the ',' character, or one or more characters within the brackets('[' and ']'), which is either whitespace, '.',i ':', '¼', '°', '"', or '-'. This regex will not match a comma followed by a digit, ie '842,842,682,846,782' stays intact.  It looks like we're trying to get a count of numbers and words. */  
+parts = Counter(split(r',?[\s.:¼°"-]+',material))
+
+#
+# 2. interpretations
+/* Declare a function named digits, which takes parameter text. */
+def digits(text):
+/* Strip leading and trailing whitespace from "text," then remove ',' with replace method, so that we can convert strings of numbers separated by commas to integers. Finally "try" to return that value after converting to an integer. If the resulting value is not an integer, i.e. hits a "ValueError" condition, return 0. */
+ try:
+  return int(text.strip().replace(',',''))
+ except ValueError:
+  return 0
+
+/* Declare a function named appearance, which takes parameter text. */
+def appearance(text):
+/* Using text as a key, return the value/counts from the "parts" Counter object. */
+ return parts.get(text)
+
+/* Declare a function named surprise_appearance, which takes parameter text. */
+def surprise_appearance(text):
+/* Return 0 if either digits(text) or text(converted to lowercase) are in terms, else return the value of text (which in this case is the count). Basically return the count for things not in terms. */
+ return 0 if digits(text) or text.lower() in terms else parts.get(text)
+
+
+#
+# 3. analysis
+/* Declare blank list findings. */
+findings = []
+/* For each item in a list of strings, which happen to be function names, some custom, and some builtin. */
+for concern in [appearance,len,digits,str,surprise_appearance]:
+/* Append to list findings, the max of iterable parts, when passing function as a key, and then converted to a string. We loop on  max(parts, key=appearance), followed by max(parts, key=len), etc. */
+ findings.append(str(max(parts,key=concern)))
+/* Print contents of  list separated by spaces and temninated with '.' */
+print(' '.join(findings)+'.')
+
+

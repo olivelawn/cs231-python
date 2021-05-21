@@ -1,0 +1,8 @@
+
+64.py: This program works well. Very concise. I like that you went from string -> dict -> list in one lin of code. Well done.
+e5.py: This program does reverse the elements of a list (and I do like your choice of lists), but the program is supposed to take arguments in on the command line. Have a look at this...might help: https://www.tutorialspoint.com/python/python_command_line_arguments.htm
+n6.py: This program works. You used get() to convert a list to dict and counted the occurences of each arg. You could have left the counting out and it would still work. 
+uz.py: This program works well. I like that you differentiated between lower and upper case as well when alphabetizing.
+fk.py: This program works! I see that you converted a list to set to remove duplicates. Nice.
+ws.py: This program works nicely and is a very concise 1-liner. Looks like you went from a list to set and then sort. Nice.
+y9.py: This program works. I found it a little challenging to read as written as a 1-liner. You might write your conditionals (if statement) on separate lines. Another way to remove duplicates is to convert the list to either a dictionary or a set.
